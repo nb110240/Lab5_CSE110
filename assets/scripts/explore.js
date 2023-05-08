@@ -12,7 +12,6 @@ function init() {
 
   function loadVoices() {
     voices = speechSynthesis.getVoices();
-    voices = speechSynthesis.getVoices();
     voices.forEach((voice) => {
       const option = document.createElement("option");
       option.value = voice.name;
