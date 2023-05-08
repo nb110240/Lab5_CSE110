@@ -5,11 +5,11 @@ window.addEventListener('DOMContentLoaded', init);
 function init() {
   // TODO
   const hornSelect = document.getElementById("horn-select");
-  const image = document.querySelector("img");
-  const audio = document.querySelector("audio");
+  const image = document.querySelector("#expose img");
+  const audio = document.querySelector("#expose audio");
   const volume = document.getElementById("volume");
   const volumeIcon = document.querySelector("#volume-controls img");
-  const playButton = document.querySelector("button");
+  const playButton = document.querySelector("#expose button");
 
   //hornSelect.addEventListener("change", HornChange);
   //volume.addEventListener("input", VolumeChange);
@@ -112,7 +112,7 @@ window.addEventListener('load', init);
 
   */
 
-  window.addEventListener("load", init);
+  //window.addEventListener("load", init);
 
 
   
