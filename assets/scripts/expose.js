@@ -8,7 +8,7 @@ function init() {
   const image = document.querySelector("#expose img");
   const audio = document.querySelector("#expose audio");
   const volume = document.getElementById("volume");
-  const volumeIcon = document.querySelector("#volume-controls img");
+  const volumeImage = document.querySelector("#volume-controls img");
   const playButton = document.querySelector("#expose button");
 
 hornSelect.addEventListener('change', function() {
