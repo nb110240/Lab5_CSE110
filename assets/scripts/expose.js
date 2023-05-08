@@ -11,9 +11,9 @@ function init() {
   const volumeIcon = document.querySelector("#volume-controls img");
   const playButton = document.querySelector("button");
 
-  hornSelect.addEventListener("change", HornChange);
-  volume.addEventListener("input", VolumeChange);
-  playButton.addEventListener("click", PlayButtonClick);
+  //hornSelect.addEventListener("change", HornChange);
+  //volume.addEventListener("input", VolumeChange);
+  //playButton.addEventListener("click", PlayButtonClick);
 
 hornSelect.addEventListener('change', function() {
   // Set the image and audio source based on the selected horn
