@@ -6,7 +6,7 @@ function init() {
   // TODO
   const hornSelect = document.getElementById("horn-select");
   const image = document.querySelector("#expose img");
-  const audio = document.querySelector("#expose audio");
+  const audio = document.querySelector("audio");
   const volumeSlider = document.getElementById("volume");
   const volumeImage = document.querySelector("#volume-controls img");
   const playButton = document.querySelector("#expose button");
