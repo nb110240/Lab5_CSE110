@@ -35,6 +35,7 @@ volumeSlider.addEventListener('input', function() {
   // Set the volume image based on the volume level
   if (volumeSlider.value == 0) {
     volumeImage.src = 'assets/icons/volume-level-0.svg';
+    playButton.disabled = true;
   } else if (volumeSlider.value < 33) {
     volumeImage.src = 'assets/icons/volume-level-1.svg';
   } else if (volumeSlider.value < 67) {
