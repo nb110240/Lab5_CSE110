@@ -12,7 +12,7 @@ function init() {
   const playButton = document.querySelector("#expose button");
 
 hornSelect.addEventListener('change', function() {
-  // Set the image and audio source based on the selected horn
+ 
   switch(hornSelect.value) {
     case 'air-horn':
       image.src = 'assets/images/air-horn.svg';
@@ -32,15 +32,17 @@ hornSelect.addEventListener('change', function() {
   }
 });
 volumeSlider.addEventListener('input', function() {
-  // Set the volume image based on the volume level
   if (volumeSlider.value == 0) {
     volumeImage.src = 'assets/icons/volume-level-0.svg';
     playButton.disabled = true;
-  } else if (volumeSlider.value < 33) {
+  } 
+  else if (volumeSlider.value < 33) {
     volumeImage.src = 'assets/icons/volume-level-1.svg';
-  } else if (volumeSlider.value < 67) {
+  } 
+  else if (volumeSlider.value < 67) {
     volumeImage.src = 'assets/icons/volume-level-2.svg';
-  } else {
+  } 
+  else {
     volumeImage.src = 'assets/icons/volume-level-3.svg';
   }
 
@@ -53,6 +55,7 @@ playButton.addEventListener('click', function(){
   
   if (hornSelect.value == 'party-horn') {
     jsConfetti.addConfetti();
+    jsConfetti();
   }
 });
 }
