@@ -39,12 +39,15 @@ volumeSlider.addEventListener('input', function() {
   } 
   else if (volumeSlider.value < 33) {
     volumeImage.src = 'assets/icons/volume-level-1.svg';
+    playButton.disabled = false;
   } 
   else if (volumeSlider.value < 67) {
     volumeImage.src = 'assets/icons/volume-level-2.svg';
+    playButton.disabled = false;
   } 
   else {
     volumeImage.src = 'assets/icons/volume-level-3.svg';
+    playButton.disabled = false;
   }
 
   audio.volume = volumeSlider.value / 100;

@@ -6,12 +6,13 @@ function init() {
 
   const textToSpeak = document.getElementById("text-to-speak");
   const voiceSelect = document.getElementById("voice-select");
-  const button = document.querySelector("button");
-  const faceImage = document.querySelector("img");
+  const button = document.querySelector("#explore button");
+  const faceImage = document.querySelector("#explore img");
+  const speech = window.speechSynthesis;
   let voices = [];
 
   function loadVoices() {
-    voices = speechSynthesis.getVoices();
+    voices = speech.getVoices();
     voices.forEach((voice) => {
       const option = document.createElement("option");
       option.value = voice.name;
@@ -19,7 +20,6 @@ function init() {
       voiceSelect.appendChild(option);
     });
   }
-
   window.speechSynthesis.onvoiceschanged = loadVoices;
 
   button.addEventListener("click", () => {
