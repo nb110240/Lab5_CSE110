@@ -15,9 +15,57 @@ function init() {
   volume.addEventListener("input", VolumeChange);
   playButton.addEventListener("click", PlayButtonClick);
 
-} 
+hornSelect.addEventListener('change', function() {
+  // Set the image and audio source based on the selected horn
+  switch(hornSelect.value) {
+    case 'air-horn':
+      image.src = 'assets/images/air-horn.svg';
+      audio.src = 'assets/audio/air-horn.mp3';
+      break;
+    case 'car-horn':
+      image.src = 'assets/images/car-horn.svg';
+      audio.src = 'assets/audio/car-horn.mp3';
+      break;
+    case 'party-horn':
+      image.src = 'assets/images/party-horn.svg';
+      audio.src = 'assets/audio/party-horn.mp3';
+      break;
+    default:
+      image.src = 'assets/images/no-image.png';
+      audio.src = '';
+  }
+});
+volumeSlider.addEventListener('input', function() {
+  // Set the volume image based on the volume level
+  if (volumeSlider.value == 0) {
+    volumeImage.src = 'assets/icons/volume-level-0.svg';
+  } else if (volumeSlider.value < 33) {
+    volumeImage.src = 'assets/icons/volume-level-1.svg';
+  } else if (volumeSlider.value < 67) {
+    volumeImage.src = 'assets/icons/volume-level-2.svg';
+  } else {
+    volumeImage.src = 'assets/icons/volume-level-3.svg';
+  }
 
+  audio.volume = volumeSlider.value / 100;
+});
 
+// Event listener for when the "Play Sound" button is clicked
+playButton.addEventListener('click', function() {
+  // Play the audio element at the current volume level
+  audio.play();
+  
+  // If the Party Horn is selected, shoot confetti
+  if (hornSelect.value == 'party-horn') {
+    confetti();
+  }
+});
+}
+
+// Call the initialize function after the DOM has loaded
+window.addEventListener('load', init);
+
+/** 
   function HornChange(event) {
     const selectedHorn = event.target.value;
 
@@ -61,6 +109,8 @@ function init() {
       jsConfetti.addConfetti();
     }
   }
+
+  */
 
   window.addEventListener("load", init);
 
