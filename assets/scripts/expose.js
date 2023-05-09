@@ -6,15 +6,16 @@ function init() {
   // TODO
   const hornSelect = document.getElementById("horn-select");
   const image = document.querySelector("#expose img");
-  const audio = document.querySelector("audio");
+  const audio = document.querySelector("audio"); // this is causing me error - fixed (audio is not inder expose)
   const volumeSlider = document.getElementById("volume");
   const volumeImage = document.querySelector("#volume-controls img");
   const playButton = document.querySelector("#expose button");
-  const jsConfetti = new JSConfetti();
+  const jsConfetti = new JSConfetti(); // confetti for pary horn 
 
 hornSelect.addEventListener('change', function() {
  
-  switch(hornSelect.value) {
+  switch(hornSelect.value) { // tried with if statements but it wasnt working exactly how I wanted it to 
+    // was giving error in part horn (im not srure why - need to figure that out) 
     case 'air-horn':
       image.src = 'assets/images/air-horn.svg';
       audio.src = 'assets/audio/air-horn.mp3';
@@ -32,38 +33,35 @@ hornSelect.addEventListener('change', function() {
       audio.src = '';
   }
 });
+//if statement would be easier here than switch 
 volumeSlider.addEventListener('input', function() {
   if (volumeSlider.value == 0) {
-    volumeImage.src = 'assets/icons/volume-level-0.svg';
-    playButton.disabled = true;
+    volumeImage.src = 'assets/icons/volume-level-0.svg';  //mute button 
   } 
   else if (volumeSlider.value < 33) {
     volumeImage.src = 'assets/icons/volume-level-1.svg';
-    playButton.disabled = false;
   } 
   else if (volumeSlider.value < 67) {
     volumeImage.src = 'assets/icons/volume-level-2.svg';
-    playButton.disabled = false;
   } 
   else {
     volumeImage.src = 'assets/icons/volume-level-3.svg';
-    playButton.disabled = false;
   }
 
-  audio.volume = volumeSlider.value / 100;
+  audio.volume = volumeSlider.value / 100; //since the elemetns voulme is not out of 100 
 });
 
 playButton.addEventListener('click', function(){
-  audio.play();
+  audio.play(); // play the horn audios 
 
   
   if (hornSelect.value == 'party-horn') {
-    jsConfetti.addConfetti();
+    jsConfetti.addConfetti(); //add confetti 
   }
 });
 }
 
-window.addEventListener('load', init);
+ 
 
 
 
